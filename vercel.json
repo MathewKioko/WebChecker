@@ -2,11 +2,7 @@
   "version": 2,
   "functions": {
     "api/*.js": {
-      "runtime": "nodejs20.x",
       "maxDuration": 10
-    },
-    "**/*.js": {
-      "runtime": "nodejs20.x"
     }
   },
   "env": {
