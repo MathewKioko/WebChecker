@@ -26,7 +26,7 @@ RUN /usr/bin/chromium --no-sandbox --version > /etc/chromium-version
 WORKDIR /app
 
 # Copy package.json and yarn.lock to the working directory
-COPY package.json ./
+COPY package.json package-lock.json ./
 
 # Run yarn install to install dependencies and clear yarn cache
 RUN apt-get update && \
@@ -44,7 +44,7 @@ FROM node:${NODE_VERSION}-${DEBIAN_VERSION}  AS final
 
 WORKDIR /app
 
-COPY package.json ./
+COPY package.json package-lock.json ./
 COPY --from=build /app .
 
 RUN apt-get update && \
