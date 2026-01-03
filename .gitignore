@@ -1,0 +1,19 @@
+# Node
+node_modules/
+yarn.lock
+
+# Build output
+dist/
+build/
+
+# Logs & env
+*.log
+.env
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+Desktop.ini

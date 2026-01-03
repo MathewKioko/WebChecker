@@ -1,0 +1,6 @@
+Contact: mailto:security@mathewkioko.dev
+Contact: mailto:mathewkioko@protonmail.com
+Expires: 2027-12-31T23:59:00.000Z
+Encryption: https://keys.openpgp.org/search?q=mathewkioko@protonmail.com
+Preferred-Languages: en
+Canonical: /security.txt

@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  web-checker:
+    container_name: Web-Checker
+    image: mathewkioko/web-checker
+    ports:
+      - 3000:3000
+    restart: unless-stopped
