@@ -30,7 +30,7 @@ COPY package.json ./
 
 # Run yarn install to install dependencies and clear yarn cache
 RUN apt-get update && \
-    npm install --network-timeout 100000 && \
+    npm ci --network-timeout 100000 && \
     rm -rf /app/node_modules/.cache
 
 # Copy all files to working directory
