@@ -1,15 +1,12 @@
 {
   "version": 2,
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1.js"
-    }
-  ],
   "functions": {
     "api/*.js": {
       "runtime": "nodejs20.x",
       "maxDuration": 10
+    },
+    "**/*.js": {
+      "runtime": "nodejs20.x"
     }
   },
   "env": {
