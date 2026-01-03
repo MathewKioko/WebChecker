@@ -26,25 +26,25 @@ RUN /usr/bin/chromium --no-sandbox --version > /etc/chromium-version
 WORKDIR /app
 
 # Copy package.json and yarn.lock to the working directory
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 
 # Run yarn install to install dependencies and clear yarn cache
 RUN apt-get update && \
-    yarn install --frozen-lockfile --network-timeout 100000 && \
+    npm install --network-timeout 100000 && \
     rm -rf /app/node_modules/.cache
 
 # Copy all files to working directory
 COPY . .
 
 # Run yarn build to build the application
-RUN yarn build --production
+RUN npm run build
 
 # Final stage
 FROM node:${NODE_VERSION}-${DEBIAN_VERSION}  AS final
 
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+COPY package.json package-lock.json ./
 COPY --from=build /app .
 
 RUN apt-get update && \
@@ -59,4 +59,4 @@ EXPOSE ${PORT:-3000}
 ENV CHROME_PATH='/usr/bin/chromium'
 
 # Define the command executed when the container starts and start the server.js of the Node.js application
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
