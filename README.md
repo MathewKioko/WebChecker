@@ -69,6 +69,50 @@ yarn start
 fly launch
 ```
 
+### Railway (Recommended for Docker)
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?url=https://github.com/MathewKioko/WebChecker)
+
+#### Manual Deployment to Railway
+
+1. Install Railway CLI:
+```bash
+npm install -g @railway/cli
+```
+
+2. Login to Railway:
+```bash
+railway login
+```
+
+3. Initialize project:
+```bash
+railway init
+```
+
+4. Deploy:
+```bash
+railway up
+```
+
+5. Set environment variables in Railway dashboard or via CLI:
+```bash
+railway variables set PORT=3000
+```
+
+#### Railway Environment Variables
+
+Configure the following environment variables in Railway:
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `PORT` | Server port | `3000` |
+| `API_ENABLE_RATE_LIMIT` | Enable rate limiting | `true` |
+| `API_TIMEOUT_LIMIT` | API timeout in milliseconds | `20000` |
+| `API_CORS_ORIGIN` | CORS origin | `*` |
+| `BOSS_SERVER` | Enable boss mode | `false` |
+| `DISABLE_GUI` | Disable web interface | `false` |
+
 ## ⚙️ Configuration
 
 You can configure Web Checker using environment variables:
